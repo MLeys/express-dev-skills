@@ -1,6 +1,6 @@
 module.exports = {
     index,
-    show 
+    show
 };
 
 
@@ -26,3 +26,4 @@ function index(req, res, next) {
 
     res.render('skills/show', {skill: skillFromDB });
   };
+
