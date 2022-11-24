@@ -9,13 +9,21 @@ const skills = [
     {id: 100008, skill: 'Rails', level: 'none'}
   ];
   
-  module.exports = {
-    getAll: function() {
-        return skills
-    }
+module.exports = {
+    getAll,
+    getOne 
   };
 
+function getAll() {
+    return skills;
+}
 
+// USING 'skill' instead of 'id' **
+function getOne(skill) {
+
+    
+    return skills.find(code => code.skill === skill)
+}
 
 //   function getAll() {
 //     return skills;
