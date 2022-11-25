@@ -11,8 +11,11 @@ const skills = [
   
 module.exports = {
     getAll,
-    getOne 
+    getOne,
+    create 
   };
+
+
 
 function getAll() {
     return skills;
@@ -24,6 +27,12 @@ function getOne(skill) {
     
     return skills.find(code => code.skill === skill)
 }
+
+//   WHAT IS Date.now() doing??
+function create(s) {
+    s.level = 'none';
+    skills.push(s);
+};  
 
 //   function getAll() {
 //     return skills;

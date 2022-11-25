@@ -9,6 +9,7 @@ const skillsController = require('../controllers/skills')
 router.get('/', skillsController.index);
 router.get('/new', skillsController.new);
 router.get('/:skill', skillsController.show);
+router.post('/', skillsController.create);
 router.get('')
 
 
