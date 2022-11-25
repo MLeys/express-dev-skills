@@ -10,7 +10,8 @@ router.get('/', skillsController.index);
 router.get('/new', skillsController.new);
 router.get('/:skill', skillsController.show);
 router.post('/', skillsController.create);
-router.get('')
+router.delete('/:skill', skillsController.delete);
+
 
 
 

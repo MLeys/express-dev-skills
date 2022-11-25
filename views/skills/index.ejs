@@ -8,6 +8,7 @@
 <h4> Updated: <%= time %> </h4>
 <ul> 
     <% skills.forEach(function(s) { %>
+
     <li>
         <form action="/skills/<%= s.skill %>?_method=DELETE"
             class="delete-form" method="POST">
