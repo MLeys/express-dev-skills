@@ -9,6 +9,10 @@
 <ul> 
     <% skills.forEach(function(s) { %>
     <li>
+        <form action="/skills/<%= s.skill %>?_method=DELETE"
+            class="delete-form" method="POST">
+            <button type="submit">X</button>
+        </form>  
         <!-- linked to name instead of #id  key-->
         <a href="/skills/<%=s.skill %>"> <%= s.skill %> </a>  
         -

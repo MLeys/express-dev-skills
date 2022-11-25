@@ -10,3 +10,17 @@ html, body {
 h1 {
     background-color: rgb(0, 80, 154);
 }
+
+.delete-form {
+    display: inline-block;
+    margin-right: 10px;
+  }
+      
+  .delete-form button {
+    background-color: #588657a5;
+    color: red;
+  }
+      
+  li {
+    list-style: none;
+  }
