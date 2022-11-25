@@ -1,10 +1,21 @@
+
+const Skill = require('../models/skill');
+
 module.exports = {
     index,
     show
 };
 
 
-const Skill = require('../models/skill');
+
+function show(req, res) {
+    console.log(req.params, ' <---- req params!');
+
+    const skillFromDB = Skill.getOne(req.params.skill)
+
+    res.render('skills/show', {skill: skillFromDB });
+  };
+
 
 function index(req, res, next) {
     // res.send('respond with a resource');
@@ -15,15 +26,8 @@ function index(req, res, next) {
   // // need to respond to the cloend with a view, 
   // // listing out all of the skills
     res.render('skills/index', {
-      skills: allSkills
-    })
-  }
-
-  function show(req, res) {
-    console.log(req.params, ' <---- req params!');
-
-    const skillFromDB = Skill.getOne(req.params.skill)
-
-    res.render('skills/show', {skill: skillFromDB });
+      skills: allSkills,
+      time: req.time
+    });
   };
 

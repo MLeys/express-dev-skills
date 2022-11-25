@@ -22,9 +22,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+app.use(function(req, res, next){
+  console.log('HELLO SEI');
+
+  req.time = new Date().toLocaleTimeString();
+  next();
+});
+
+
 
 app.use('/', indexRouter);
 app.use('/skills', skillsRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -42,5 +51,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 
 module.exports = app;
