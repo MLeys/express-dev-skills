@@ -13,6 +13,8 @@ module.exports = {
     getAll,
     getOne,
     create,
+    edit,
+    update,
     deleteOne
   };
 
@@ -30,13 +32,25 @@ function getOne(skill) {
 }
 
 //   WHAT IS Date.now() doing??
-function create(s) {
-    s.level = 'none';
-    skills.push(s);
+function create(skill) {
+    skill.level = 'none';
+    skills.push(skill);
 };  
+
+function update(level) {
+    const index = skills.findIndex(skill => skill.level === level);
+    skills[index]['level'] === level;
+};  
+
+function edit(level) {
+    const index = skills.findIndex(skill => skill.level === level);
+    return skills[index]['level'] === level;
+};
 
 function deleteOne(skill) {
     const index = skills.findIndex(code => code.skill === skill);
     return skills.splice(index, 1);
 
-}
+};
+
+

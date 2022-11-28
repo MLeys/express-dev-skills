@@ -6,7 +6,10 @@ module.exports = {
     show,
     new: newSkill,
     create,
-    delete: deleteSkill
+    edit,
+    delete: deleteSkill,
+    update
+    
 };
 
 function deleteSkill(req, res) {
@@ -16,12 +19,23 @@ function deleteSkill(req, res) {
     
 }
 
-function create(req, res) {
-    console.log('create controller ran')
-    
-    Skill.create(req.body);
-    res.redirect('/skills');
+function update(req, res) {
+  console.log(' -----  EDIT ------')
+  Skill.edit(req.body);
+  res.redirect('/skills');
+
 };
+
+function create(req, res) {
+  console.log('create controller ran')
+    
+  Skill.create(req.body);
+  res.redirect('/skills');
+};
+
+function edit(req, res) {
+  res.render('skills/edit');
+}
 
 
 function newSkill(req, res) {
