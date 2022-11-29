@@ -1,14 +1,23 @@
-<%- include("../partials/headerNoStyle.ejs") %>
+<%- include("../partials/headerStyle.ejs") %>
 
-<title>Coding Skills</title>
+<title>Coding Skills - edit</title>
 </head>
 <body>
-    TEST ASDFASDSFASFD ASFSDFASDFDSAFAS
-    <!-- <h1>Edit Skills</h1>
-    <form action="/skills" method="PUT" autocomplete="off">
-        <input type="text" name="skill">
+
+
+
+    
+    <h1>Edit Skill</h1>
+
+    <form action="/skills/<%= skill.skill %>?_method=PUT" method="POST">
+        <input type="text" name="skill" value="<%= skill.skill %> ">
+        <input type="checkbox" 
+        <%  if (skill.done) { %>
+            checked  
+            <% } %> 
+        name="done">
         <button type="submit">Save Skill</button>
-    </form> -->
+    </form>
     
 
 <%- include("../partials/footer.ejs") %>

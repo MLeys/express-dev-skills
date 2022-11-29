@@ -10,13 +10,13 @@ router.get('/', skillsController.index);
 router.get('/new', skillsController.new);
 router.get('/:skill', skillsController.show);
 router.post('/', skillsController.create);
-router.get('/edit', skillsController.edit);
-router.put('/:skill', skillsController.update);
 router.delete('/:skill', skillsController.delete);
+router.get('/:skill/edit', skillsController.edit);
+router.put('/:skill', skillsController.update);
 
 
 
 
-
+ 
 
 module.exports = router;

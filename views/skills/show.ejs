@@ -1,11 +1,15 @@
 <%- include("../partials/headerStyle.ejs") %>
+<link rel="stylesheet" href="/stylesheets/skills/show.css">
+<title> <%= skill.skill %> -  </title>
 
 <!-- GET request is trying to pull a .cc file page i think  -->
 </head>
 <body>
 
 <h1>Skill </h1>
-    <h3><%= skill.skill %> </h3>
+    <h2>Skill : <%= skill.skill %> </h3>
+    <h2>Level: <%= skill.level %> </h2>
         <h3>Proficient: <%= skill.level == 'Proficient' ? 'Yes' : 'No' %></h3>
+
 
 <%- include("../partials/footer.ejs") %>
